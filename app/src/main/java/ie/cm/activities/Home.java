@@ -8,15 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import ie.cm.R;
 
 public class Home extends Base {
+    TextView recentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        recentList=(TextView) findViewById(R.id.recentlyAddedListEmpty);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.drawable.ic_launcher1);
@@ -42,6 +45,14 @@ public class Home extends Base {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(!coffeeList.isEmpty())
+            recentList.setText(coffeeList.toString());
+        else
+            recentList.setText(getString(R.string.recentlyViewedListEmptyMessage));
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -56,5 +67,10 @@ public class Home extends Base {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void add(View v){
+        goToActivity(this,Add.class,null);
     }
 }

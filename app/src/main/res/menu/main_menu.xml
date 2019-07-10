@@ -6,18 +6,21 @@
         android:icon='@drawable/about'
         android:title="Info"
         android:orderInCategory="100"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        android:onClick="menuInfo"/>
 
     <item android:id="@+id/menu_help"
         android:icon="@drawable/help"
         android:title="Help"
         android:orderInCategory="100"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        android:onClick="menuHelp"/>
 
     <item android:id="@+id/menu_home"
         android:icon="@drawable/home"
         android:title="Home"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:onClick="menuHome"/>
 
 </menu>
