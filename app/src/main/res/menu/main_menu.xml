@@ -23,4 +23,11 @@
         app:showAsAction="ifRoom"
         android:onClick="menuHome"/>
 
+    <item android:id="@+id/menu_hompe"
+        android:icon="@drawable/ic_cup_of_coffee_svgrepo_com"
+        android:title="Home"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:onClick="menuFavourite"/>
+
 </menu>

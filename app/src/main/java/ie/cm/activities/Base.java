@@ -55,4 +55,7 @@ public class Base extends AppCompatActivity {
 	public void menuHome(MenuItem m){
 		goToActivity(this,Home.class,null);
 	}
+	public void menuFavourite(MenuItem m){
+		goToActivity(this,Favourite.class,null);
+	}
 }
